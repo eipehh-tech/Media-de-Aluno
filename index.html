@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Alunos</h1>
+        
+        <form id="alunoForm">
+            <input type="text" id="nome" placeholder="Nome do aluno" required>
+            <input type="number" id="idade" placeholder="Idade" required>
+            <input type="number" id="nota1" placeholder="Nota 1" required>
+            <input type="number" id="nota2" placeholder="Nota 2" required>
+            <input type="number" id="nota3" placeholder="Nota 3" required>
+            <button type="submit">Adicionar Aluno</button>
+        </form>
+
+        <button id="calcular">Calcular Médias</button>
+
+        <h2>Lista de Alunos</h2>
+        <ul id="listaAlunos"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
