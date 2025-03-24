@@ -32,3 +32,30 @@ function calcularMedia(notas) {
 function verificarAprovacao(aluno) {
   return calcularMedia(aluno.notas) >= 7;
 }
+
+function atualizarListaDeAlunos() {
+  const lista = document.getElementById("listaAlunos");
+  lista.innerHTML = "";
+
+  alunos.forEach((aluno) => {
+    const li = document.createElement("li");
+    li.textContent = `${aluno.nome} | ${aluno.idade} anos | ${aluno.notas.join(
+      ", "
+    )} `;
+    lista.appendChild(li);
+  });
+}
+
+document.getElementById("calcular").addEventListener("click", function () {
+  const lista = document.getElementById("listaAlunos");
+  lista.innerHTML = "";
+
+  alunos.forEach((aluno) => {
+    const media = calcularMedia(aluno.notas);
+    const status = verificarAprovacao(aluno) ? "✅ Aprovado" : "❌ Reprovado";
+
+    const li = document.createElement("li");
+    li.textContent = `${aluno.nome} - Média: ${media.toFixed(1)} - ${status}`;
+    lista.appendChild(li);
+  });
+});
