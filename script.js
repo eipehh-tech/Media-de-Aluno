@@ -23,3 +23,12 @@ document
 
     document.getElementById("alunoForm").reset();
   });
+
+function calcularMedia(notas) {
+  const soma = notas.reduce((acc, nota) => acc + parseFloat(nota), 0);
+  return soma / notas.length;
+}
+
+function verificarAprovacao(aluno) {
+  return calcularMedia(aluno.notas) >= 7;
+}
